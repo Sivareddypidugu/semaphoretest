@@ -11,6 +11,8 @@ blocks:
         - name: Composer
           commands:
             - checkout
+            - cache restore
+            - composer install
     dependencies: []
   - name: Test
     task:
