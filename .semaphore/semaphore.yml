@@ -22,7 +22,6 @@ blocks:
             - cache restore
             - npm install
             - cache store
-            - apt install phpmd
     dependencies:
       - Install Dependencies
   - name: parellel Job
