@@ -11,8 +11,12 @@ blocks:
         - name: Run some code
           commands:
             - echo '<?php print "Hello World!\n"; ?>' > hello.php && php hello.php
-  - name: 'Block #2'
+  - name: Tests
     task:
+      prologue:
+        commands:
+          - sem-version php 5.6
       jobs:
-        - name: 'Job #1'
-          commands: []
+        - name: Tests
+          commands:
+            - php --version
