@@ -4,57 +4,10 @@ agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu2004
-global_job_config:
-  prologue:
-    commands:
-      - sem-version php 7.4
 blocks:
-  - name: Install Dependencies
-    task:
-      jobs:
-        - name: composer
-          commands:
-            - checkout
-            - cache restore
-            - cache store
-    dependencies: []
-  - name: Test
-    task:
-      jobs:
-        - name: Test
-          commands:
-            - checkout
-            - sem-version node 12
-            - cache restore
-            - npm install
-            - cache store
-    dependencies:
-      - Install Dependencies
-  - name: parellel Job
-    dependencies:
-      - Install Dependencies
-      - Test
+  - name: 'Block #1'
     task:
       jobs:
         - name: 'Job #1'
           commands:
-            - 'checkout '
-            - ls
-        - name: 'Job #2'
-          commands:
-            - 'checkout '
-            - ls
-        - name: 'Job #3'
-          commands:
             - checkout
-            - ls
-  - name: 'Run Code Analysis '
-    dependencies:
-      - Install Dependencies
-      - Test
-      - parellel Job
-    task:
-      jobs:
-        - name: phpmd
-          commands:
-            - phpmd Sivareddypidugu/semaphoretest/ text phpmd_myset.xml
