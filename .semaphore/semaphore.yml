@@ -53,4 +53,4 @@ blocks:
       jobs:
         - name: phpmd
           commands:
-            - phpmd Sivareddypidugu/semaphoretest/ text phpmd_myset.xml
+            - php vendor/bin/phpmd app/ text phpmd_ruleset.xml
