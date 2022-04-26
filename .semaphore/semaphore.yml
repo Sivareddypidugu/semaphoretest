@@ -51,4 +51,4 @@ blocks:
       jobs:
         - name: phpmd
           commands:
-            - phpmd github.com/Sivareddypidugu/semaphoretest/blob/5390013c04605451e36e17cbb014dfaed99dd6d9/myrules.xml
+            - phpmd Sivareddypidugu/semaphoretest/blob/5390013c04605451e36e17cbb014dfaed99dd6d9/myrules.xml
