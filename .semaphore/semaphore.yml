@@ -12,5 +12,4 @@ blocks:
           commands:
             - checkout
             - cache restore
-            - php composer.phar install
             - composer install
