@@ -1,13 +1,27 @@
 version: v1.0
-name: PHP example
+name: PHP Example
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Hello world
+  - name: Install dependencies
     task:
       jobs:
-        - name: Run some code
+        - name: Composer install
           commands:
-            - echo '<?php print "Hello World!\n"; ?>' > hello.php && php hello.php
+            - checkout
+            - cache restore
+            - composer install
+            - cache store
+  - name: Tests
+    task:
+      prologue:
+        commands:
+          - checkout
+          - cache restore
+          - 'export "PATH=./vendor/bin:${PATH}"'
+      jobs:
+        - name: Everything
+          commands:
+            - codecept test
