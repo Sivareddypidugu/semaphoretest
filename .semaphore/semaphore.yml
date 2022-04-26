@@ -12,5 +12,6 @@ blocks:
           commands:
             - checkout
             - cache restore
+            - 'curl -sS https://getcomposer.org/installer | php'
             - composer install
             - cache store
