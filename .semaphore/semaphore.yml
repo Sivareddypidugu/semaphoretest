@@ -11,6 +11,7 @@ blocks:
         - name: Composer
           commands:
             - checkout
+    dependencies: []
   - name: Test
     task:
       jobs:
@@ -21,3 +22,23 @@ blocks:
             - cache restore
             - npm install
             - cache store
+    dependencies:
+      - Install Dependencies
+  - name: parellel Job
+    dependencies:
+      - Install Dependencies
+      - Test
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands:
+            - 'checkout '
+            - ls
+        - name: 'Job #2'
+          commands:
+            - 'checkout '
+            - ls
+        - name: 'Job #3'
+          commands:
+            - checkout
+            - ls
