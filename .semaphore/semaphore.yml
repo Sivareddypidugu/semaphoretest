@@ -13,7 +13,7 @@ blocks:
             - checkout
         - name: 'npm '
           commands:
-            - npm Install
+            - npm install
     dependencies: []
   - name: Test
     task:
