@@ -42,3 +42,13 @@ blocks:
           commands:
             - checkout
             - ls
+  - name: 'Run Code Analysis '
+    dependencies:
+      - Install Dependencies
+      - Test
+      - parellel Job
+    task:
+      jobs:
+        - name: phpmd
+          commands:
+            - 'phpmd https://github.com/Sivareddypidugu/semaphoretest/blob/5390013c04605451e36e17cbb014dfaed99dd6d9/myrules.xml'
