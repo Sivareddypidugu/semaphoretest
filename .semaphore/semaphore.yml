@@ -11,3 +11,10 @@ blocks:
         - name: Composer
           commands:
             - checkout
+  - name: Test
+    task:
+      jobs:
+        - name: Test
+          commands:
+            - checkout
+            - sem-version node 12
