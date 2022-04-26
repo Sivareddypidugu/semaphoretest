@@ -20,4 +20,5 @@ blocks:
             - sem-version node 12
             - cache restore
             - npm install
+            - cache store
             - npm test
