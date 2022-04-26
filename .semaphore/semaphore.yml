@@ -22,7 +22,6 @@ blocks:
             - checkout
             - sem-version node 12
             - cache restore
-            - composer install
             - npm install
             - cache store
     dependencies:
