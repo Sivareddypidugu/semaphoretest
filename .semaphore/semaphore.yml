@@ -12,6 +12,7 @@ blocks:
           commands:
             - checkout
             - cache restore
+            - php-console-color
             - cache store
     dependencies: []
   - name: Test
