@@ -4,6 +4,10 @@ agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu2004
+global_job_config:
+  prologue:
+    commands:
+      - sem-version php 7.4
 blocks:
   - name: Install Dependencies
     task:
@@ -53,4 +57,4 @@ blocks:
       jobs:
         - name: phpmd
           commands:
-            - php vendor/bin/phpmd app/ text phpmd_ruleset.xml
+            - phpmd Sivareddypidugu/semaphoretest/ text phpmd_myset.xml
