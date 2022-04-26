@@ -8,7 +8,7 @@ blocks:
   - name: Install Dependencies
     task:
       jobs:
-        - name: Composer
+        - name: composer
           commands:
             - checkout
             - cache restore
