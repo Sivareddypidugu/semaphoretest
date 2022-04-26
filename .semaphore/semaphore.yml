@@ -18,3 +18,5 @@ blocks:
           commands:
             - checkout
             - sem-version node 12
+            - cache restore
+            - npm install
