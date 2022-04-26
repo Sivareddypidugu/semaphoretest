@@ -5,18 +5,23 @@ agent:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Hello world
+  - name: Install dependencies
     task:
       jobs:
-        - name: Run some code
+        - name: Composer install
           commands:
-            - echo '<?php print "Hello World!\n"; ?>' > hello.php && php hello.php
+            - checkout
+            - cache restore
+            - composer install
+            - cache store
   - name: Tests
     task:
       prologue:
         commands:
-          - sem-version php 5.6
+          - checkout
+          - cache restore
+          - 'export "PATH=./vendor/bin:${PATH}"'
       jobs:
-        - name: Tests
+        - name: Everything
           commands:
-            - php --version
+            - codecept test
