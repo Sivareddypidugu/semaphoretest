@@ -12,7 +12,6 @@ blocks:
           commands:
             - checkout
             - cache restore
-            - composer install
             - cache store
     dependencies: []
   - name: Test
