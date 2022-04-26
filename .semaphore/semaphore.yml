@@ -1,13 +1,13 @@
 version: v1.0
-name: Initial Pipeline
+name: PHP example
 agent:
   machine:
     type: e1-standard-2
-    os_image: ubuntu2004
+    os_image: ubuntu1804
 blocks:
-  - name: 'Block #1'
+  - name: Hello world
     task:
       jobs:
-        - name: 'Job #1'
+        - name: Run some code
           commands:
-            - checkout
+            - echo '<?php print "Hello World!\n"; ?>' > hello.php && php hello.php
