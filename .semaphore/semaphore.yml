@@ -53,4 +53,4 @@ blocks:
       jobs:
         - name: phpmd
           commands:
-            - phpmd Sivareddypidugu/semaphoretest/blob/5390013c04605451e36e17cbb014dfaed99dd6d9/myrules.xml
+            - phpmd Sivareddypidugu/semaphoretest/ text phpmd_myset.xml
