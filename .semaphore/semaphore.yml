@@ -14,4 +14,3 @@ blocks:
             - cache restore
             - php composer.phar install
             - composer install
-            - cache store
