@@ -20,3 +20,5 @@ blocks:
             - sem-version node 12
             - cache restore
             - npm install
+            - npm run build --if-present
+            - npm test
