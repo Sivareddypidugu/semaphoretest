@@ -11,6 +11,9 @@ blocks:
         - name: Composer
           commands:
             - checkout
+        - name: 'npm '
+          commands:
+            - npm Install
     dependencies: []
   - name: Test
     task:
