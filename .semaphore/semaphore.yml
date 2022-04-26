@@ -1,16 +1,18 @@
 version: v1.0
-name: PHP Example
+name: PHP example
 agent:
   machine:
     type: e1-standard-2
     os_image: ubuntu1804
 blocks:
-  - name: Install dependencies
+  - name: Hello world
     task:
       jobs:
-        - name: Composer install
+        - name: Run some code
           commands:
-            - checkout
-            - cache restore
-            - composer install
-            - cache store
+            - echo '<?php print "Hello World!\n"; ?>' > hello.php && php hello.php
+  - name: 'Block #2'
+    task:
+      jobs:
+        - name: 'Job #1'
+          commands: []
