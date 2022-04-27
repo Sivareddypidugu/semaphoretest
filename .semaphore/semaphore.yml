@@ -17,7 +17,6 @@ blocks:
             - cache restore
             - composer install
             - npm install
-            - 'php artisan key:generate'
   - name: Run Code Analysis
     task:
       prologue:
