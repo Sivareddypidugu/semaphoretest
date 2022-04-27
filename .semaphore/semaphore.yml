@@ -18,7 +18,6 @@ blocks:
             - composer install
             - npm install
             - cache store
-            - cp .env.example .env
             - 'php artisan key:generate'
   - name: Run Code Analysis
     task:
