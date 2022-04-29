@@ -5,9 +5,25 @@ agent:
     type: e1-standard-2
     os_image: ubuntu2004
 blocks:
-  - name: 'Block #1'
+  - name: 'build '
     task:
       jobs:
-        - name: 'Job #1'
+        - name: composer
           commands:
             - checkout
+            - 'composer install '
+            - 'cache restore '
+            - 'npm install '
+  - name: 'tests '
+    task:
+      agent:
+        machine:
+          type: e1-standard-2
+          os_image: ubuntu1804
+      jobs:
+        - name: unit tests
+          commands:
+            - echo "unit tests"
+        - name: 'integration test '
+          commands:
+            - echo "running integration test"
