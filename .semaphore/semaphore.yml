@@ -10,20 +10,4 @@ blocks:
       jobs:
         - name: composer
           commands:
-            - checkout
-            - 'composer install '
-            - 'cache restore '
-            - 'npm install '
-  - name: 'tests '
-    task:
-      agent:
-        machine:
-          type: e1-standard-2
-          os_image: ubuntu1804
-      jobs:
-        - name: unit tests
-          commands:
-            - echo "unit tests"
-        - name: 'integration test '
-          commands:
-            - echo "running integration test"
+            - 'checkout '
