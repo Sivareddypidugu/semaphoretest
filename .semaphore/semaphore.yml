@@ -10,6 +10,7 @@ blocks:
       jobs:
         - name: composer
           commands:
+            - sudo su -
             - mkdir /opt/preconfig/
             - cd /opt/preconfig/
             - touch test.txt
