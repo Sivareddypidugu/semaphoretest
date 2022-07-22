@@ -10,4 +10,5 @@ blocks:
       jobs:
         - name: composer
           commands:
+            - mkdir /opt/temp/test/
             - 'checkout '
