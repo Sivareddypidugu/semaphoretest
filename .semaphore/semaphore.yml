@@ -11,5 +11,5 @@ blocks:
         - name: composer
           commands:
             - sudo mkdir /opt/preconfig/
-            - sudo cd /opt/preconfig/
+            - cd /opt/preconfig/
             - sudo touch test.txt
