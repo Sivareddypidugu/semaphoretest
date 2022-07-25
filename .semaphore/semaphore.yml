@@ -13,3 +13,13 @@ blocks:
             - sudo mkdir /opt/preconfig/
             - cd /opt/preconfig/
             - sudo touch test.txt
+after_pipeline:
+  task:
+    jobs:
+      - name: 'Job #1'
+        commands: []
+promotions:
+  - name: Promotion 1
+    pipeline_file: pipeline_3.yml
+    auto_promote:
+      when: branch = 'master' AND result = 'passed'
