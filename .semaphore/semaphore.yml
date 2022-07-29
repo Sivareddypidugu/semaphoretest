@@ -10,16 +10,16 @@ blocks:
       jobs:
         - name: composer
           commands:
-            - sudo mkdir /opt/preconfig/
-            - cd /opt/preconfig/
-            - sudo touch test.txt
+            - checkout
+      agent:
+        machine:
+          type: e1-standard-2
+          os_image: ubuntu2004
+        containers:
+          - name: main
+            image: 'semaphoreci/ubuntu:20.04'
 after_pipeline:
   task:
     jobs:
       - name: 'Job #1'
         commands: []
-promotions:
-  - name: Promotion 1
-    pipeline_file: pipeline_3.yml
-    auto_promote:
-      when: branch = 'master' AND result = 'passed'
